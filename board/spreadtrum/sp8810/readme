@@ -1,0 +1,5 @@
+针对不同MCP扫描得到不同的DDR参数和DDR频率不同的情况来设置相应参数，从而达到适配:
+1. 在u-boot/board/spreadtrum/sp8810/ddr_para.c的表ddr_config_table中添加MCP的DDR参数;
+2. 在表ddr_config_table中前五项为MCP的nand的ID值，可通过打开机log得到nand的ID值;
+3. 若遇到MCP的nand ID值相同但DDR参数不同的情况，请把DDR扫描的log文件放一起重新用分析工具得到一组兼容的DDR参数;
+4. DDR频率不同的情况,请先在u-boot/arch/arm/cpu/armv7/sc8810/sdram_prod.c中的s_emc_parm.emc_clk配置一个能兼容的频率。
