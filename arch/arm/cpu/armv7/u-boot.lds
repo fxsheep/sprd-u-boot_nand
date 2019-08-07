@@ -66,7 +66,7 @@ SECTIONS
 		*(.dynsym)
 	}
 
-	.bss __rel_dyn_start (OVERLAY) : {
+	.bss : {
 		__bss_start = .;
 		*(.bss)
 		 . = ALIGN(4);
